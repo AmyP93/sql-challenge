@@ -1,0 +1,27 @@
+-- to clear tables:
+-- DROP TABLE IF EXISTS DEPARTMENTS;
+-- DROP TABLE IF EXISTS DEPT_EMP;
+-- DROP TABLE IF EXISTS DEPT_MANAGER;
+-- DROP TABLE IF EXISTS EMPLOYEES;
+-- DROP TABLE IF EXISTS SALARIES;
+-- DROP TABLE IF EXISTS TITLES;
+
+CREATE TABLE "employees" (
+    "emp_no" INT   NOT NULL,
+    "emp_title_id" VARCHAR   NOT NULL,
+    "birth_date" DATE   NOT NULL,
+    "first_name" VARCHAR   NOT NULL,
+    "last_name" VARCHAR   NOT NULL,
+    "sex" VARCHAR   NOT NULL,
+    "hire_date" DATE   NOT NULL,
+    CONSTRAINT "pk_employees" PRIMARY KEY (
+        "emp_no"
+     )
+);
+
+--(5)List first name, last name, and sex for employees whose first name 
+--is "Hercules" and last names begin with "B."
+SELECT first_name, last_name, sex
+FROM employees
+WHERE first_name = 'Hercules'
+AND last_name LIKE 'B%'; 
